@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    android:padding="@dimen/_5sdp">
+
+    <!--android:background="@drawable/retake_bg"-->
+
+
+    <Button
+        android:id="@+id/btnRetakeAvailable"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginEnd="@dimen/_2sdp"
+        android:background="@color/colorAccent"
+        android:text="Camera"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintEnd_toStartOf="@+id/btnPublishAndContiAvailable"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--android:background="@drawable/retake_bg"-->
+
+    <Button
+        android:id="@+id/btnPublishAndContiAvailable"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginStart="@dimen/_2sdp"
+        android:background="@drawable/bg_button"
+        android:text="Gallery"
+        android:textAllCaps="false"
+        android:textColor="@color/blackMedium"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnRetakeAvailable"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnRetakeAvailable"
+        app:layout_constraintTop_toTopOf="@+id/btnRetakeAvailable" />
+
+    <!--android:background="@drawable/retake_bg"-->
+
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout66"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/view58"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/constraintLayout65"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textView255"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="TextView"
+                android:textColor="@color/text_title_color"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toStartOf="@+id/imageView92"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView256"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="TextView"
+                android:textColor="@color/text_gray_color"
+                android:textSize="@dimen/_9ssp"
+                app:layout_constraintEnd_toStartOf="@+id/imageView92"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView255" />
+
+            <ImageView
+                android:id="@+id/imageView92"
+                android:layout_width="@dimen/_13sdp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView255"
+                app:srcCompat="@drawable/ic_down_arrow" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/feedback_child"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout65">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rec_feedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="#E9E9E9"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/_1sdp"
+                android:paddingBottom="@dimen/_1sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rec_summary">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="1"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_1sdp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Overall Rating"
+                        android:textSize="@dimen/_9ssp" />
+
+                    <com.willy.ratingbar.ScaleRatingBar
+                        android:id="@+id/ratingbar_overall_red"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:gravity="center"
+                        app:srb_drawableEmpty="@drawable/ic_graystar"
+                        app:srb_drawableFilled="@drawable/ic_red_stars_two"
+                        app:srb_isIndicator="true"
+                        app:srb_starHeight="@dimen/_20sdp"
+                        app:srb_starPadding="0dp"
+                        app:srb_starWidth="@dimen/_20sdp" />
+
+                    <com.willy.ratingbar.ScaleRatingBar
+                        android:id="@+id/ratingbar_overall_yellow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        app:srb_drawableEmpty="@drawable/ic_graystar"
+                        app:srb_drawableFilled="@drawable/ic_yellow_star"
+                        app:srb_isIndicator="true"
+                        app:srb_starHeight="@dimen/_20sdp"
+                        app:srb_starPadding="0dp"
+                        app:srb_starWidth="@dimen/_20sdp" />
+
+                    <com.willy.ratingbar.ScaleRatingBar
+                        android:id="@+id/ratingbar_overall_green"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        app:srb_drawableEmpty="@drawable/ic_graystar"
+                        app:srb_drawableFilled="@drawable/ic_green_star"
+                        app:srb_isIndicator="true"
+                        app:srb_starHeight="@dimen/_20sdp"
+                        app:srb_starPadding="0dp"
+                        app:srb_starWidth="@dimen/_20sdp" />
+
+                    <TextView
+                        android:id="@+id/tv_show_rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:text="2.5 Stars"
+                        android:textSize="@dimen/_9ssp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Recommend to hire"
+                        android:textSize="@dimen/_9ssp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/reco_yes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableTop="@drawable/ic_tik_green"
+                            android:gravity="center"
+                            android:text="--"
+                            android:textColor="@color/blackMedium"
+                            android:textSize="@dimen/_9ssp" />
+
+                        <TextView
+                            android:id="@+id/reco_no"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_20sdp"
+                            android:drawableTop="@drawable/ic_cross_red"
+                            android:gravity="center"
+                            android:text="--"
+                            android:textColor="@color/blackMedium"
+                            android:textSize="@dimen/_9ssp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
+
+    <View
+        android:id="@+id/view57"
+        android:layout_width="@dimen/_2sdp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:background="@color/border_color"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout66"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/view58"
+        android:layout_width="@dimen/_8sdp"
+        android:layout_height="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_13ssp"
+        android:background="@drawable/circular_view_green"
+        app:layout_constraintEnd_toEndOf="@+id/view57"
+        app:layout_constraintStart_toStartOf="@+id/view57"
+        app:layout_constraintTop_toTopOf="@+id/view57" />
+
+</android.support.constraint.ConstraintLayout>

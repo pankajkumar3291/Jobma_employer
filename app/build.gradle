@@ -1,0 +1,73 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.jobma.employer"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 5
+        versionName "1.5"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:support-v4:28.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
+//    implementation 'am.appwise.components:NoInternetDialog:1.1.3'
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'net.alhazmy13.MediaPicker:libary:2.4.4'
+    implementation 'com.android.support:cardview-v7:28.0.0'
+
+    implementation 'commons-io:commons-io:2.6'
+
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.1'
+    implementation 'com.squareup.okhttp3:okhttp:3.12.1'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    //no internet dialog
+    implementation 'com.github.vasu-bhardwaj:NoInternet:V1.3'
+    //open camera and gallery for image, don't update this library
+    implementation 'com.fxn769:pix:1.2.5'
+    //exo player for video playing
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.9.6'
+    implementation 'com.google.android.exoplayer:exoplayer-dash:2.9.6'
+    implementation 'com.google.android.exoplayer:exoplayer-ui:2.9.6'
+    implementation 'com.google.android.exoplayer:exoplayer-hls:2.9.6'
+
+    //for animation
+    implementation 'com.github.mohammadatif:Animatoo:master'
+    //rating bar library
+    implementation 'com.github.ome450901:SimpleRatingBar:1.4.3'
+    //to transfer the data
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    implementation 'com.google.android.gms:play-services-auth:16.0.1'
+    //for week calander
+    implementation project(path:':weekcalendar')
+    implementation 'joda-time:joda-time:2.9.9'
+
+}

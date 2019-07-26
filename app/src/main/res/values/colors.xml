@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3DC8DF</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#3DC8DF</color>
+
+
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+
+
+    <color name="colorDarkSkyBlue">#3DC8DF</color>
+    <color name="colorGrey">#D6DADA</color>
+
+    <color name="colorwhite">#FFFFFF</color>
+    <color name="colorgrey">#D6DADA</color>
+    <color name="darkgrey">#BABABA</color>
+    <color name="red">#FE0000</color>
+    <color name="green">#9CE5D8</color>
+    <color name="text_color">#737680</color>
+    <color name="bg_color">#F4F4F4</color>
+    <color name="lightBlack">#808080</color>
+    <color name="blackMedium">#2B2B2B</color>
+    <color name="gray_default">#cccccc</color>
+    <color name="dark_gray">#A9A9A9</color>
+    <color name="green1">#3CBEA4</color>
+    <color name="darkRed">#CE2E22</color>
+    <color name="orangeLight">#F79646</color>
+    <color name="onHold">#FBC47A</color>
+
+    <color name="selected">#91DAB9</color>
+    <color name="pending">#9CCFD8</color>
+    <color name="rejected">#FF908F</color>
+    <color name="border_color">#f7f7f7</color>
+    <color name="dialog_rounded_color">#4B494A</color>
+    <color name="colorGreenProgressbar">#6CB246</color>
+
+    <color name="text_title_color">#333333</color>
+    <color name="text_gray_color">#9a9a9a</color>
+
+    <color name="viewed_color">#94d6e2</color>
+    <color name="on_hold_color">#f9c579</color>
+    <color name="rejected_color">#fe908f</color>
+    <color name="selected_color">#90dab9</color>
+    <color name="applied_color">#84dd7b</color>
+    <color name="pending_color">#faa079</color>
+
+</resources>
