@@ -3,16 +3,17 @@ package com.jobma.employer.activities;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.TextInputLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.fivemin.chief.nonetworklibrary.networkBroadcast.NoNet;
+import com.google.android.material.textfield.TextInputLayout;
 import com.jobma.employer.R;
 import com.jobma.employer.dialogs.GlobalProgressDialog;
 import com.jobma.employer.model.account.EOForgetPassword;

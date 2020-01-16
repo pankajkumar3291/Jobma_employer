@@ -9,7 +9,7 @@ public class EOQuestionData implements Serializable {
 
     @SerializedName("ques")
     @Expose
-    private Integer ques;
+    private Object ques;
     @SerializedName("ques_title")
     @Expose
     private String quesTitle;
@@ -37,7 +37,8 @@ public class EOQuestionData implements Serializable {
     @SerializedName("options")
     @Expose
     private List<String> options = null;
-    public EOQuestionData(Integer ques, String quesTitle, String qtype, String fileName, String thinktime, String duration, String attempts, String correct, String optional, List<String> options) {
+
+    public EOQuestionData(Object ques, String quesTitle, String qtype, String fileName, String thinktime, String duration, String attempts, String correct, String optional, List<String> options) {
         this.ques = ques;
         this.quesTitle = quesTitle;
         this.qtype = qtype;
@@ -49,11 +50,11 @@ public class EOQuestionData implements Serializable {
         this.optional = optional;
         this.options = options;
     }
-    public Integer getQues() {
+    public Object getQues() {
         return ques;
     }
 
-    public void setQues(Integer ques) {
+    public void setQues(Object ques) {
         this.ques = ques;
     }
 

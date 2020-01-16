@@ -3,9 +3,6 @@ package com.jobma.employer.activities;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.constraint.ConstraintLayout;
-import android.support.design.widget.TextInputEditText;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -17,7 +14,11 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+
 import com.fivemin.chief.nonetworklibrary.networkBroadcast.NoNet;
+import com.google.android.material.textfield.TextInputEditText;
 import com.jobma.employer.R;
 
 import java.io.Serializable;

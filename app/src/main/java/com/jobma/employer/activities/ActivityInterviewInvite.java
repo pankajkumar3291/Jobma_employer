@@ -1,9 +1,10 @@
 package com.jobma.employer.activities;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.jobma.employer.R;
 import com.jobma.employer.fragments.FragmentPreRecordedInterview;

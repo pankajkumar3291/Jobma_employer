@@ -4,23 +4,18 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.content.ContextCompat;
-import android.widget.Toast;
 
-import com.squareup.otto.Subscribe;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import org.joda.time.DateTime;
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
 
 import java.util.ArrayList;
 import java.util.Date;
 
 import noman.weekcalendar.R;
-import noman.weekcalendar.eventbus.Event;
 import noman.weekcalendar.fragment.WeekFragment;
 
 import static noman.weekcalendar.fragment.WeekFragment.DATE_KEY;
@@ -102,26 +97,5 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
         currentPage++;
         currentPage = currentPage >= NUM_OF_PAGES - 1 ? NUM_OF_PAGES / 2 : currentPage;
     }
-
-
-
-
-
-   /* public DateTime getDate() {
-        return date;
-    }
-
-    public int getCurrentPage() {
-        return currentPage;
-    }
-
-    public void setCurrentPage(int currentPage) {
-        this.currentPage = currentPage;
-    }
-
-    public void setDate(DateTime date) {
-        this.date = date;
-    }
-*/
 
 }

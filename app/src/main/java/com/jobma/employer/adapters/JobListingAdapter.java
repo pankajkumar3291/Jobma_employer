@@ -9,10 +9,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.constraint.ConstraintLayout;
-import android.support.v4.app.FragmentActivity;
-import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -27,6 +23,11 @@ import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.FragmentActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.jobma.employer.R;
 import com.jobma.employer.activities.ActivityEvaluateCandidates;
@@ -353,7 +354,6 @@ public class JobListingAdapter extends RecyclerView.Adapter<JobListingAdapter.Jo
             });
         }
     }
-
 
     private void showNoDataFoundDialog(String dialogMessage) {
         final Dialog dialog = new Dialog(context, R.style.Theme_AppCompat_Light_Dialog_Alert);

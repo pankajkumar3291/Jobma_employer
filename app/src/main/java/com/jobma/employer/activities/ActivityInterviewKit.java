@@ -9,12 +9,6 @@ import android.media.ThumbnailUtils;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.constraint.ConstraintLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.text.TextUtils;
 import android.util.ArrayMap;
@@ -33,6 +27,13 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.blogspot.atifsoftwares.animatoolib.Animatoo;
 import com.fivemin.chief.nonetworklibrary.networkBroadcast.NoNet;
@@ -104,6 +105,7 @@ public class ActivityInterviewKit extends AppCompatActivity implements View.OnCl
     private boolean isEditing = false;
     private String kitid = "";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -143,9 +145,11 @@ public class ActivityInterviewKit extends AppCompatActivity implements View.OnCl
                                     }
                                 } else {
                                     tvQuestionHeading.setVisibility(View.GONE);
+
 //                                tv_no_data.setVisibility(View.VISIBLE);
 //                                recInterviewkit.setVisibility(View.GONE);
 //                                Toast.makeText(getActivity(),""+eoEvaluateCandidates.getMessage(),Toast.LENGTH_SHORT).show();
+
                                 }
                             } else {
                                 tvQuestionHeading.setVisibility(View.GONE);
@@ -242,7 +246,7 @@ public class ActivityInterviewKit extends AppCompatActivity implements View.OnCl
                     Map<String, Object> jsonParams = new ArrayMap<>();
                     jsonParams.put("qtype", "3");
                     jsonParams.put("qcontent", etquestion.getText().toString());
-                    //todo                   api for essay type question=
+                    //todo                   api for essay type question
                     RequestBody body = RequestBody.create(okhttp3.MediaType.parse("application/json; charset=utf-8"), (new JSONObject(jsonParams)).toString());
                     try {
                         apiInterface.addInterviewQuestions(apikey, body).enqueue(new Callback<EOMCQuestionRequest>() {
@@ -302,6 +306,7 @@ public class ActivityInterviewKit extends AppCompatActivity implements View.OnCl
                 wlp.flags &= ~WindowManager.LayoutParams.FLAG_DIM_BEHIND;
                 window.setAttributes(wlp);
                 Button btnGallery = mediaDialog.findViewById(R.id.btnPublishAndContiAvailable);
+
                 btnCamera.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -396,7 +401,7 @@ public class ActivityInterviewKit extends AppCompatActivity implements View.OnCl
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onMessageEvent(MessageEvent event) {
-        Toast.makeText(getApplicationContext(), "called event", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(), "called event", Toast.LENGTH_SHORT).show();
     }
 
     public void addMultiQuestion(int qid, String qTitle, int type) {

@@ -3,10 +3,6 @@ package com.jobma.employer.activities;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.constraint.ConstraintLayout;
-import android.support.design.widget.TextInputLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
@@ -17,7 +13,12 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.fivemin.chief.nonetworklibrary.networkBroadcast.NoNet;
+import com.google.android.material.textfield.TextInputLayout;
 import com.jobma.employer.R;
 import com.jobma.employer.adapters.EvaluationFilterAccountAdapter;
 import com.jobma.employer.application.ApplicationHelper;

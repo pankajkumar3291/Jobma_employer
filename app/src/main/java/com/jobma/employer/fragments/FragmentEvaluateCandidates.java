@@ -5,12 +5,6 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.constraint.ConstraintLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +15,13 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.jobma.employer.R;
 import com.jobma.employer.activities.ActivityEvaluateCandidates;
 import com.jobma.employer.activities.ActivityEvaluateFilter;
@@ -80,12 +81,12 @@ public class FragmentEvaluateCandidates extends Fragment {
     }
 
     private void initView() {
-        this.progress = new GlobalProgressDialog(getContext());
+        this.progress = new GlobalProgressDialog(getActivity());
         this.apiInterface = APIClient.getClient();
         this.loginPreferences = ApplicationHelper.application().loginPreferences(LOGIN_SIGNUP_PREFERENCE);
         this.apiKey = loginPreferences.getString(SELECTED_API_KEY, "");
-        layoutManager = new LinearLayoutManager(getContext());
-        evaluateCandidateAdapter = new EvaluateCandidateAdapter(getContext(), candidatesList);
+        layoutManager = new LinearLayoutManager(getActivity());
+        evaluateCandidateAdapter = new EvaluateCandidateAdapter(getActivity(), candidatesList);
 
         recEvaluateCandidates = view.findViewById(R.id.rec_evaluate_candidates);
         emptyText = view.findViewById(R.id.textView204);
@@ -199,7 +200,7 @@ public class FragmentEvaluateCandidates extends Fragment {
                         public void onResponse(Call<EOEvaluateCandidates> call, Response<EOEvaluateCandidates> response) {
                             if (progress != null && progress.isShowing()) {
                                 progress.dismiss();
-                                progress = null;
+                                //progress = null;
                             } else
                                 progressBar.setVisibility(View.GONE);
                             if (response.body().getError() == 0) {
@@ -226,7 +227,7 @@ public class FragmentEvaluateCandidates extends Fragment {
                         public void onFailure(Call<EOEvaluateCandidates> call, Throwable t) {
                             if (progress != null && progress.isShowing()) {
                                 progress.dismiss();
-                                progress = null;
+                                //progress = null;
                             } else
                                 progressBar.setVisibility(View.GONE);
                         }
@@ -234,7 +235,7 @@ public class FragmentEvaluateCandidates extends Fragment {
                 } catch (Exception e) {
                     if (progress != null && progress.isShowing()) {
                         progress.dismiss();
-                        progress = null;
+                        //progress = null;
                     } else
                         progressBar.setVisibility(View.GONE);
                     e.printStackTrace();
@@ -249,7 +250,7 @@ public class FragmentEvaluateCandidates extends Fragment {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == Activity.RESULT_OK && requestCode == 222) {
             params = (Map<String, String>) data.getSerializableExtra("mapData");
-            progress = new GlobalProgressDialog(getContext());
+            progress = new GlobalProgressDialog(getActivity());
             candidatesList.clear();
             visibleItems = 1;
             isfirst = true;

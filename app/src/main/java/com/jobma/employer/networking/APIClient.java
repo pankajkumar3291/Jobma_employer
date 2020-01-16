@@ -29,6 +29,7 @@ import com.jobma.employer.model.interviewKit.EOInterviewKitList;
 import com.jobma.employer.model.interview_log.EOInvitationLog;
 import com.jobma.employer.model.jobList.EOJobDescription;
 import com.jobma.employer.model.jobList.EOMessageObject;
+import com.jobma.employer.model.liveInterview.EOLiveInterview;
 import com.jobma.employer.model.mcq_question_request.EOMCQuestionRequest;
 import com.jobma.employer.model.profile.EOForwardObject;
 import com.jobma.employer.model.profile.EOProfileObject;
@@ -440,19 +441,6 @@ public class APIClient {
         Call<EOCreateInterviewKit> addKitRequest(@Path("kit") String path, @Header("key") String key, @FieldMap HashMap<String, String> data);
 
 
-
-       /* @FormUrlEncoded
-        @POST("edit-kit")
-        Call<EOCreateInterviewKit> addKitRequest(@Header("key") String key,
-                                                 @Field("kit_title") String kitTitle,
-                                                 @Field("qid") String qid,
-                                                 @Field("duration") String duration,
-                                                 @Field("thinktime") String thinktime,
-                                                 @Field("retake") String retake,
-                                                 @Field("optional") String optional,
-                                                 @Field("random_ques") int randomQues,
-                                                 @Field("random_option") int randomOption);*/
-
         @GET("feedback-param")
         Call<EOGetRatingRow> getRatings(@Header("key") String key);
 
@@ -512,6 +500,12 @@ public class APIClient {
 
         @GET("check-expiry")
         Call<EOForgetPassword> getWalletExpiry(@Header("key") String key);
+
+        @FormUrlEncoded
+        @POST("live-interview-check")
+        Call<EOLiveInterview> liveInterviewCheck(@Header("key") String key,
+                                                 @Field("invite_id") int inviteId,
+                                                 @Field("token") String token);
 
 
     }

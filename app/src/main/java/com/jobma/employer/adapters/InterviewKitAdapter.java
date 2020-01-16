@@ -2,13 +2,14 @@ package com.jobma.employer.adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.constraint.ConstraintLayout;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.jobma.employer.R;
 import com.jobma.employer.activities.ActivityInterviewKit;
@@ -48,7 +49,7 @@ public class InterviewKitAdapter extends RecyclerView.Adapter<InterviewKitAdapte
         viewHolder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                context.startActivity(new Intent(context, ActivityInterviewKit.class).putExtra("kitId",kitListData.getId()));
+                context.startActivity(new Intent(context, ActivityInterviewKit.class).putExtra("kitId", kitListData.getId()));
             }
         });
 

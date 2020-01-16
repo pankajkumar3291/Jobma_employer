@@ -1,6 +1,7 @@
 package com.jobma.employer.model.setupInterview;
 
-import android.support.annotation.NonNull;
+
+import androidx.annotation.NonNull;
 
 import java.io.Serializable;
 

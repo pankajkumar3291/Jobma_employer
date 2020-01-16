@@ -141,7 +141,6 @@ public class GlobalApplication extends Application {
         super.onConfigurationChanged(newConfig);
     }
 
-
     @SuppressLint("TrulyRandom")
     public static void handleSSLHandshake() {
 
@@ -172,10 +171,8 @@ public class GlobalApplication extends Application {
         }
     }
 
-
     public DataSource.Factory buildDataSourceFactory() {
-        DefaultDataSourceFactory upstreamFactory =
-                new DefaultDataSourceFactory(this, buildHttpDataSourceFactory());
+        DefaultDataSourceFactory upstreamFactory = new DefaultDataSourceFactory(this, buildHttpDataSourceFactory());
         return buildReadOnlyCacheDataSource(upstreamFactory, getDownloadCache());
     }
 
@@ -194,19 +191,11 @@ public class GlobalApplication extends Application {
 
     private synchronized void initDownloadManager() {
         if (downloadManager == null) {
-            DownloaderConstructorHelper downloaderConstructorHelper =
-                    new DownloaderConstructorHelper(getDownloadCache(), buildHttpDataSourceFactory());
-            downloadManager =
-                    new DownloadManager(
-                            downloaderConstructorHelper,
-                            MAX_SIMULTANEOUS_DOWNLOADS,
-                            DownloadManager.DEFAULT_MIN_RETRY_COUNT,
-                            new File(getDownloadDirectory(), DOWNLOAD_ACTION_FILE));
-            downloadTracker =
-                    new DownloadTracker(
-                            this,
-                            buildDataSourceFactory(),
-                            new File(getDownloadDirectory(), DOWNLOAD_TRACKER_ACTION_FILE));
+            DownloaderConstructorHelper downloaderConstructorHelper = new DownloaderConstructorHelper(getDownloadCache(), buildHttpDataSourceFactory());
+            downloadManager = new DownloadManager(downloaderConstructorHelper, MAX_SIMULTANEOUS_DOWNLOADS,
+                    DownloadManager.DEFAULT_MIN_RETRY_COUNT,
+                    new File(getDownloadDirectory(), DOWNLOAD_ACTION_FILE));
+            downloadTracker = new DownloadTracker(this, buildDataSourceFactory(), new File(getDownloadDirectory(), DOWNLOAD_TRACKER_ACTION_FILE));
             downloadManager.addListener(downloadTracker);
         }
     }
@@ -229,15 +218,9 @@ public class GlobalApplication extends Application {
         return downloadDirectory;
     }
 
-    private static CacheDataSourceFactory buildReadOnlyCacheDataSource(
-            DefaultDataSourceFactory upstreamFactory, Cache cache) {
-        return new CacheDataSourceFactory(
-                cache,
-                upstreamFactory,
-                new FileDataSourceFactory(),
-                null,
-                CacheDataSource.FLAG_IGNORE_CACHE_ON_ERROR,
-                null);
+    private static CacheDataSourceFactory buildReadOnlyCacheDataSource(DefaultDataSourceFactory upstreamFactory, Cache cache) {
+        return new CacheDataSourceFactory(cache, upstreamFactory, new FileDataSourceFactory(), null,
+                CacheDataSource.FLAG_IGNORE_CACHE_ON_ERROR, null);
     }
 
     public DownloadTracker getDownloadTracker() {

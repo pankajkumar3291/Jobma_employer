@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,7 +7,7 @@
     android:background="@android:color/white"
     tools:context="com.jobma.employer.fragments.FragmentPreRecordedInterview">
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout28"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -29,7 +28,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
         android:id="@+id/imageView13"
@@ -41,7 +40,7 @@
         app:layout_constraintEnd_toEndOf="@+id/constraintLayout28"
         app:layout_constraintTop_toTopOf="@+id/constraintLayout28" />
 
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textView157"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -51,7 +50,7 @@
         app:layout_constraintStart_toStartOf="@+id/constraintLayout28"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout28">
 
-        <android.support.design.widget.TextInputEditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_select_date"
             style="@style/App_EditTextStyle"
             android:layout_width="match_parent"
@@ -64,7 +63,7 @@
             android:singleLine="true"
             android:textSize="@dimen/_9ssp" />
 
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/textView158"
@@ -115,12 +114,12 @@
         app:layout_constraintStart_toEndOf="@+id/radioButton9"
         app:layout_constraintTop_toTopOf="@+id/radioButton9" />
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/_8sdp"
-        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout29"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -143,7 +142,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout29"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -175,6 +174,6 @@
             app:layout_constraintEnd_toStartOf="@+id/textView161"
             app:layout_constraintTop_toTopOf="parent" />
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,11 +2,12 @@ package noman.weekcalendar.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.util.AttributeSet;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.viewpager.widget.ViewPager;
 
 import com.squareup.otto.Subscribe;
 
@@ -112,9 +113,7 @@ public class WeekPager extends ViewPager {
         initPager(event.getStartDate());
     }
 
-
     private int idCheck() {
-
         int id = 0;
         while (findViewById(++id) != null) ;
         return id;

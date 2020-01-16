@@ -1,6 +1,7 @@
 package com.jobma.employer.activities;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -16,18 +17,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
-import android.support.annotation.Nullable;
-import android.support.constraint.ConstraintLayout;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -37,8 +26,21 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 import com.fivemin.chief.nonetworklibrary.networkBroadcast.NoNet;
 import com.fxn.pix.Pix;
+import com.google.android.material.snackbar.Snackbar;
 import com.jobma.employer.R;
 import com.jobma.employer.application.ApplicationHelper;
 import com.jobma.employer.components.SessionSecuredPreferences;
@@ -181,6 +183,7 @@ public class ActivityDashboard extends AppCompatActivity implements View.OnClick
         findViewById(R.id.textView8).setOnClickListener(this);
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @SuppressLint("WrongConstant")
             @Override
             public void onClick(View v) {
                 drawer.openDrawer(Gravity.START);
@@ -334,6 +337,7 @@ public class ActivityDashboard extends AppCompatActivity implements View.OnClick
         imgtik.setImageResource(R.drawable.ic_cross);
         message.setText(dialogMessage);
         dialogBtn_logout.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("WrongConstant")
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
@@ -364,6 +368,7 @@ public class ActivityDashboard extends AppCompatActivity implements View.OnClick
                 .into(imageView);
     }
 
+    @SuppressLint("WrongConstant")
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -591,6 +596,7 @@ public class ActivityDashboard extends AppCompatActivity implements View.OnClick
 
         Button btnOk = dialog.findViewById(R.id.button26);
         btnOk.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("WrongConstant")
             @Override
             public void onClick(View v) {
 

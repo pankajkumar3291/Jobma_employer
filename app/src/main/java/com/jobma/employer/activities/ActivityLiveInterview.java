@@ -7,8 +7,6 @@ import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.TextInputEditText;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
@@ -21,7 +19,10 @@ import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.fivemin.chief.nonetworklibrary.networkBroadcast.NoNet;
+import com.google.android.material.textfield.TextInputEditText;
 import com.jobma.employer.R;
 import com.jobma.employer.application.ApplicationHelper;
 import com.jobma.employer.components.SessionSecuredPreferences;

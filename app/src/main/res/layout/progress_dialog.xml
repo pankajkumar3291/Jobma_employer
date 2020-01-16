@@ -13,8 +13,7 @@
         android:layout_width="@dimen/_50sdp"
         android:layout_height="@dimen/_50sdp"
         android:layout_gravity="center_horizontal"
-        android:scrollbarSize="@dimen/_50sdp"
-        android:theme="@style/progressDialogStyle" />
+        android:scrollbarSize="@dimen/_50sdp" />
 
     <TextView
         android:id="@+id/progressLabel"

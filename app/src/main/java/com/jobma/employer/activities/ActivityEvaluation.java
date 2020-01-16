@@ -10,13 +10,6 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.constraint.ConstraintLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -31,6 +24,14 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.jobma.employer.R;
 import com.jobma.employer.application.ApplicationHelper;
 import com.jobma.employer.components.SessionSecuredPreferences;
@@ -623,7 +624,7 @@ public class ActivityEvaluation extends AppCompatActivity implements View.OnClic
                 questionViewHolder.multipleLayout.setVisibility(View.VISIBLE);
                 questionViewHolder.tvMultiTitle.setText(interViewQuestion.getQuesTitle());
                 questionViewHolder.recyclerView.setHasFixedSize(true);
-                questionViewHolder.tvCorrectAns.setText(interViewQuestion.getOptions().get(Integer.valueOf(interViewQuestion.getCorrect())));
+                questionViewHolder.tvCorrectAns.setText(interViewQuestion.getOptions().get(Integer.valueOf(!TextUtils.isEmpty(interViewQuestion.getCorrect().trim())?interViewQuestion.getCorrect().trim():"0")));
                 if (!TextUtils.isEmpty(interViewQuestion.getAnswer())) {
                     questionViewHolder.tvUserAnswer.setText(interViewQuestion.getOptions().get(Integer.valueOf(interViewQuestion.getAnswer())));
                     if (interViewQuestion.getOptions().get(Integer.valueOf(interViewQuestion.getAnswer())).equalsIgnoreCase(interViewQuestion.getOptions().get(Integer.valueOf(interViewQuestion.getCorrect()))))
@@ -631,7 +632,9 @@ public class ActivityEvaluation extends AppCompatActivity implements View.OnClic
                     else
                         questionViewHolder.tvUserAnswer.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_tik_small_red, 0);
                 } else questionViewHolder.tvUserAnswer.setText("N/A");
-                questionViewHolder.recyclerView.setAdapter(new MultiAnsAdapter(context, interViewQuestion.getOptions()));
+
+                if (interViewQuestion.getOptions().size() > 0)
+                    questionViewHolder.recyclerView.setAdapter(new MultiAnsAdapter(context, interViewQuestion.getOptions()));
             }
 
             if (interViewQuestion.getQtype().equalsIgnoreCase("3")) {
@@ -713,16 +716,11 @@ public class ActivityEvaluation extends AppCompatActivity implements View.OnClic
         private Context context;
         private List<String> multiAnsList;
         private List<String> orderList = new ArrayList<>();
+        private char aChar = 'a';
 
         private MultiAnsAdapter(Context context, List<String> multiAnsList) {
             this.context = context;
             this.multiAnsList = multiAnsList;
-            orderList.add("a.");
-            orderList.add("b.");
-            orderList.add("c.");
-            orderList.add("d.");
-            orderList.add("e.");
-            orderList.add("f.");
         }
 
         @NonNull
@@ -734,7 +732,8 @@ public class ActivityEvaluation extends AppCompatActivity implements View.OnClic
 
         @Override
         public void onBindViewHolder(@NonNull MultiAnsViewHolder multiAnsViewHolder, int i) {
-            multiAnsViewHolder.tvAns.setText(orderList.get(i) + " " + multiAnsList.get(i));
+
+            multiAnsViewHolder.tvAns.setText(aChar++ + ": " + multiAnsList.get(i));
         }
 
         @Override

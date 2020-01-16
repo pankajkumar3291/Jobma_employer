@@ -25,6 +25,9 @@ public class EOLoginData implements Serializable {
     @SerializedName("email")
     @Expose
     private String email;
+    @SerializedName("id")
+    @Expose
+    private int id;
 
     public String getJobmaCatcherCompany() {
         return jobmaCatcherCompany;
@@ -72,6 +75,14 @@ public class EOLoginData implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
 }

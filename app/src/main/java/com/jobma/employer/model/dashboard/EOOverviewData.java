@@ -7,6 +7,9 @@ import java.io.Serializable;
 
 public class EOOverviewData implements Serializable {
 
+    @SerializedName("id")
+    @Expose
+    private int id;
     @SerializedName("jobma_post")
     @Expose
     private Integer jobmaPost;
@@ -40,6 +43,14 @@ public class EOOverviewData implements Serializable {
     @SerializedName("pitcher_photo")
     @Expose
     private String pitcherPhoto;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public Integer getJobmaPost() {
         return jobmaPost;

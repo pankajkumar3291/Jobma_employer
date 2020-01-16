@@ -1,10 +1,11 @@
 package com.jobma.employer.activities;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.fivemin.chief.nonetworklibrary.networkBroadcast.NoNet;
 import com.jobma.employer.R;

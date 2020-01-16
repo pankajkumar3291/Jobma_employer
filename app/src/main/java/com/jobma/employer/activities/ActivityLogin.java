@@ -3,23 +3,24 @@ package com.jobma.employer.activities;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.fivemin.chief.nonetworklibrary.networkBroadcast.NoNet;
 import com.jobma.employer.R;
-import com.jobma.employer.networking.APIClient;
 import com.jobma.employer.application.ApplicationHelper;
-import com.jobma.employer.model.account.EOLoginResponse;
+import com.jobma.employer.components.SessionSecuredPreferences;
 import com.jobma.employer.dialogs.GlobalProgressDialog;
+import com.jobma.employer.model.account.EOLoginResponse;
+import com.jobma.employer.networking.APIClient;
 import com.jobma.employer.util.GlobalUtil;
 import com.jobma.employer.util.ObjectUtil;
-import com.jobma.employer.components.SessionSecuredPreferences;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -32,6 +33,7 @@ import static com.jobma.employer.util.Constants.EMPLOYEE_PHOTO;
 import static com.jobma.employer.util.Constants.LOGIN_SIGNUP_PREFERENCE;
 import static com.jobma.employer.util.Constants.RESPONSE_SUCCESS;
 import static com.jobma.employer.util.Constants.SELECTED_API_KEY;
+import static com.jobma.employer.util.Constants.USER_ID;
 import static com.jobma.employer.util.Constants.USER_TYPE;
 
 public class ActivityLogin extends AppCompatActivity implements View.OnClickListener {
@@ -106,6 +108,7 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
                             loginPreferences.edit().putString(EMPLOYEE_NAME, loginResponse.getData().getJobmaCatcherCompany()).apply();
                             loginPreferences.edit().putString(EMPLOYEE_EMAIL, loginResponse.getData().getEmail()).apply();
                             loginPreferences.edit().putString(EMPLOYEE_PHOTO, loginResponse.getData().getJobmaCatcherPhoto()).apply();
+                            loginPreferences.edit().putInt(USER_ID, loginResponse.getData().getId()).apply();
 
                             Intent dashboardIntent = new Intent(ActivityLogin.this, ActivityDashboard.class);
                             startActivity(dashboardIntent);
@@ -114,6 +117,8 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
                             Toast.makeText(ActivityLogin.this, "" + loginResponse.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
+                } else {
+                    Toast.makeText(ActivityLogin.this, "" + response.message(), Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -121,7 +126,7 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
             public void onFailure(Call<EOLoginResponse> call, Throwable t) {
                 if (t.getMessage() != null) {
                     progress.hideProgressBar();
-                    Toast.makeText(ActivityLogin.this, "Failed Error" + t.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ActivityLogin.this, "Failed Error :" + t.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
         });

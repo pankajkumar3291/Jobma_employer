@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 import com.jobma.employer.R;
 
-
 @SuppressWarnings("deprecation")
 public class GlobalProgressDialog extends ProgressDialog {
 

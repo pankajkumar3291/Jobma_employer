@@ -15,6 +15,7 @@ public class EOQuestionSet implements Serializable {
     public List<EOQuestionData> getQuestion(){
         return question;
     }
+
     public void setQuestion(List<EOQuestionData> question){
         this.question = question;
     }

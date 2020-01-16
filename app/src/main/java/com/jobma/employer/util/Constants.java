@@ -20,10 +20,14 @@ public interface Constants {
     String EMPLOYEE_PHOTO = "jobma_catcher_photo";
     String SUB_USER = "Sub User";
     String CREDIT_WALLET = "credit_wallet";
+    String USER_ID = "id";
 
 
     String BASE_URL = "https://dev.jobma.com:8090/v4/employer/";
 
     //String BASE_URL = "https://www.jobma.com:9000/v4/employer/";
+
+    String BASE_URL_FOR_LIVE_INTERVIEW = "https://dev.jobma.com:9999/";
+
 
 }

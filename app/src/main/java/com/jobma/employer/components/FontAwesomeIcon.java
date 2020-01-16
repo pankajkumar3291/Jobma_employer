@@ -1,10 +1,11 @@
 package com.jobma.employer.components;
 
 import android.content.Context;
-import android.support.annotation.DimenRes;
-import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 import android.util.TypedValue;
+
+import androidx.annotation.DimenRes;
+import androidx.appcompat.widget.AppCompatTextView;
 
 import com.jobma.employer.R;
 import com.jobma.employer.application.GlobalApplication;
